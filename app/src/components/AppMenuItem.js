@@ -15,8 +15,27 @@ import IconExpandMore from "@mui/icons-material/ExpandMore";
 
 import AppMenuItemComponent from "./AppMenuItemComponent";
 
+// React runtime PropTypes
+// export const AppMenuItemPropTypes = {
+//   name: PropTypes.string.isRequired,
+//   link: PropTypes.string,
+//   Icon: PropTypes.elementType,
+//   items: PropTypes.array,
+// };
+
+// TypeScript compile-time props type, infered from propTypes
+// https://dev.to/busypeoples/notes-on-typescript-inferring-react-proptypes-1g88
+// type AppMenuItemPropTypes = PropTypes.InferProps<typeof AppMenuItemPropTypes>;
+// type AppMenuItemPropsWithoutItems = Omit<AppMenuItemPropTypes, "items">;
+
+// Improve child items declaration
+// export type AppMenuItemProps = AppMenuItemPropsWithoutItems & {
+//   items?: AppMenuItemProps[],
+// };
+
 const AppMenuItem = (props) => {
   const { name, link, Icon, items = [] } = props;
+  //   const classes = useStyles();
   const isExpandable = items && items.length > 0;
   const [open, setOpen] = React.useState(false);
 
@@ -26,12 +45,14 @@ const AppMenuItem = (props) => {
 
   const MenuItemRoot = (
     <AppMenuItemComponent className={""} link={link} onClick={handleClick}>
+      {/* Display an icon if any */}
       {!!Icon && (
         <ListItemIcon className={""}>
           <Icon />
         </ListItemIcon>
       )}
       <ListItemText primary={name} inset={!Icon} />
+      {/* Display the expand menu if the item has children */}
       {isExpandable && !open && <IconExpandMore />}
       {isExpandable && open && <IconExpandLess />}
     </AppMenuItemComponent>

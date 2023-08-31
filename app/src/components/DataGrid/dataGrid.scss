@@ -1,0 +1,33 @@
+@use "../../colors.scss";
+
+.data-table__header {
+  background-color: colors.$gray-1;
+}
+
+.pagination__inactive-page,
+.pagination__nav-button {
+  color: colors.$soft-black;
+}
+
+.pagination__active-page {
+  background-color: colors.$vibrant-green;
+  color: colors.$white;
+}
+
+.pagination__inactive-page {
+  background-color: colors.$gray-1;
+}
+
+.pagination__total-results {
+  margin-left: 1rem;
+}
+
+// Adding a property to the class contained in the react-bootstrap-table-next library
+.pagination {
+  justify-content: end;
+}
+
+// Adding a property to the class contained in the react-bootstrap-table-next library
+.react-bootstrap-table-pagination-list {
+  justify-content: end;
+}

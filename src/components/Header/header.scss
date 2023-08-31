@@ -1,0 +1,43 @@
+@use "../../colors.scss";
+
+.header__container {
+  background-color: colors.$gray-4 !important;
+}
+
+.header-left__logo-image {
+  height: 37px;
+  width: 150px;
+}
+
+.header-left__text {
+  padding-left: 1rem;
+  text-align: center;
+  font-size: 1.35rem;
+  // font-weight: bold;
+}
+
+.header-left__text--primary {
+  color: colors.$white;
+}
+
+.header-right__logout-button {
+  background-color: colors.$gray-1;
+  border: none;
+  color: colors.$soft-black;
+}
+
+.header-right__logout-button:hover {
+  background-color: colors.$vibrant-green;
+  border: none;
+  color: colors.$white;
+}
+
+.header-right__text {
+  color: colors.$white;
+}
+
+.header-right__logout-button {
+  background-color: colors.$vibrant-green;
+  border: none;
+  color: colors.$white;
+}
