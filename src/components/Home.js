@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -11,6 +11,7 @@ import SearchOptions from "./SearchOptions";
 import { Grid } from "@mui/material";
 import DataGrid from "./DataGrid/DataGrid";
 import Header from "./Header/Header";
+import Modal from "../components/Modal";
 
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
@@ -30,6 +31,8 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
 
 export default function Home() {
   const [value, setValue] = React.useState(0);
+  const [showModal, setShowModal] = useState(false);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -72,6 +75,7 @@ export default function Home() {
                 color: "#white",
                 backgroundColor: "#00c791",
               }}
+              onClick={() => setShowModal(true)}
             >
               Add
             </Button>
@@ -124,6 +128,20 @@ export default function Home() {
           </Stack>
         </div>
       </Box>
+      {showModal ? (
+        <Modal
+          shouldShow={showModal}
+          modalTitle="Add"
+          modalCloseHandler={setShowModal}
+        >
+          {/* <RecordForm
+            formType={inquiryFormType}
+            formData={selectedRecordData}
+            onFormReset={() => setShowModal(false)}
+          /> */}
+          HII
+        </Modal>
+      ) : null}
     </>
   );
 }

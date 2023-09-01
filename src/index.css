@@ -48,3 +48,7 @@ tr:nth-child(even) {
   min-width: 149px;
   text-align: center;
 }
+
+.selection-cell-header {
+  background-color: #c2c6d2 !important;
+}

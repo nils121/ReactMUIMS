@@ -3,7 +3,7 @@ import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 // import { useDemoData } from "@mui/x-data-grid-generator";
-import JSONdata from "../data/data.json";
+// import JSONdata from "../data/data.json";
 import "./dataGrid.scss";
 
 export default function DataGrid() {
@@ -21,19 +21,22 @@ export default function DataGrid() {
     {
       dataField: "id",
       text: "ID",
-      style: { width: "10px" },
+      headerClasses: "data-table__header",
     },
     {
       dataField: "userId",
       text: "User ID",
+      headerClasses: "data-table__header",
     },
     {
       dataField: "title",
       text: "Title",
+      headerClasses: "data-table__header",
     },
     {
       dataField: "completed",
       text: "Completed",
+      headerClasses: "data-table__header",
     },
   ];
 
@@ -62,11 +65,12 @@ export default function DataGrid() {
   const selectRow = {
     mode: "checkbox",
     clickToSelect: true,
-    bgColor: "#00BFFF",
+    bgColor: "#00EEAE",
     onSelect: (e) => {
       console.log(e);
     },
     selected: rowSelected,
+    headerClasses: "data-table__header",
   };
 
   // const handleOnSelect = (row, isSelect) => {

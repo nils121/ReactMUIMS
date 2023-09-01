@@ -1,7 +1,8 @@
 @use "../../colors.scss";
 
 .data-table__header {
-  background-color: colors.$gray-1;
+  background-color: colors.$gray-2 !important;
+  width: 100px;
 }
 
 .pagination__inactive-page,
